@@ -24,6 +24,28 @@ document.addEventListener('keydown', () => {
 });
 
 // 3. wheel to zoom in bus picture
+function zoom(event) {
+    event.preventDefault();
+
+    if (event.deltaY < 0) {
+        // Zoom in
+        scale *= event.deltaY * -0.1;
+      }
+      else {
+        // Zoom out
+        scale /= event.deltaY * 0.1;
+      }
+    
+      // Restrict scale
+      scale = Math.min(Math.max(.8, scale), 1.2);
+    
+      // Apply scale transform
+      funBus.style.transform = `scale(${scale})`;
+}
+
+let scale = 1;
+const funBus = document.querySelector('.container .intro img');
+funBus.addEventListener('wheel', zoom);
 
 // 4. Drag either let's go image or adventure waits image over eachother
 
