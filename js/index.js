@@ -66,6 +66,15 @@ headings.forEach((heading) => {
 
 // 7. As window is resized, invert sizes
 
+const currentDimensions = document.createElement('p');
+const footer = document.querySelector('footer');
+footer.setAttribute('style', 'display: flex; justify-content: center;');
+currentDimensions.textContent = `Height: ${window.innerHeight}, Width: ${window.innerHeight}`;
+
+footer.appendChild(currentDimensions)
+window.onresize = function() {
+    currentDimensions.textContent = `Height: ${window.innerHeight}, Width: ${window.innerHeight}`;
+};
 
 // 8. Scroll progressively changes the header background colour
 
@@ -117,14 +126,14 @@ window.addEventListener('scroll', function (e) {
 
 // 9. Copy any paragraph text that has been selected
 function editSelection() {
-    let selection = window.getSelection();
-    alert(selection);
+    let selection = window.getSelection(); 
+    alert(selection + ' succesfully copied');
 }
 
 const paragraph = document.querySelectorAll('p');
 
 paragraph.forEach((p) => {
-    p.addEventListener('select', editSelection);
+    p.addEventListener('copy', editSelection);
 });
 
 // 10. Increase size of 2 main images if double clicked
