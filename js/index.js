@@ -47,8 +47,11 @@ let scale = 1;
 const funBus = document.querySelector('.container .intro img');
 funBus.addEventListener('wheel', zoom);
 
-// 4. Drag either let's go image or adventure waits image over eachother
-
+// 4. Change title once mouse enter triggered
+let title = document.querySelector('.main-navigation h1');
+title.addEventListener('mouseenter', (event) => {
+    event.target.textContent = 'Not So Fun Bus';
+  });
 
 // 5. Congratulate user for successfully loading the page
 // window.addEventListener('load', () => {
@@ -64,7 +67,7 @@ headings.forEach((heading) => {
     });
 })
 
-// 7. As window is resized, invert sizes
+// 7. As window is resized, keep track of sizes
 
 const currentDimensions = document.createElement('p');
 const footer = document.querySelector('footer');
