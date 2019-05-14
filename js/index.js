@@ -68,7 +68,7 @@ headings.forEach((heading) => {
     });
 })
 
-// 7. As window is resized, keep track of sizes
+// 7. As window is resized, keep track of sizes at footer
 
 const currentDimensions = document.createElement('p');
 const footer = document.querySelector('footer');
@@ -161,7 +161,7 @@ destinationh1.addEventListener('click', event => event.target.textContent = 'Top
 destinationp.addEventListener('click', event => event.stopPropagation());
 destinationhbtn.addEventListener('click', event => event.target.textContent = 'Bottom Level');
 
-
+// prevent normal action of a tags
 navLinks.forEach(link => function() {
     link.addEventListener('click', (event) => {
         event.preventDefault();
