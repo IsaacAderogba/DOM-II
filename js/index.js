@@ -49,7 +49,11 @@ funBus.addEventListener('wheel', zoom);
 
 // 4. Drag either let's go image or adventure waits image over eachother
 
+
 // 5. Congratulate user for successfully loading the page
+window.addEventListener('load', () => {
+    alert("Congratulations, you've loaded the page!");
+})
 
 // 6. focus on a heading paints a beach background
 
