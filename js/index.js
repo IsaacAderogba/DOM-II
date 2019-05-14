@@ -115,7 +115,25 @@ window.addEventListener('scroll', function (e) {
     }
 });
 
+// 9. Copy any paragraph text that has been selected
+function editSelection() {
+    let selection = window.getSelection();
+    alert(selection);
+}
 
-// 9. Bold and italicise any text that has been selected
+const paragraph = document.querySelectorAll('p');
 
-// 10. Increase size of any 3 images if double clicked
+paragraph.forEach((p) => {
+    p.addEventListener('select', editSelection);
+});
+
+// 10. Increase size of 2 main images if double clicked
+let mainImages = document.querySelectorAll('.img-content img');
+
+mainImages[0].addEventListener('dblclick', () => {
+    mainImages[0].setAttribute('style', 'transform: scale(1.10);');
+});
+
+mainImages[1].addEventListener('dblclick', () => {
+    mainImages[1].setAttribute('style', 'transform: scale(1.10);');
+});
