@@ -6,6 +6,7 @@ const buttons = document.querySelectorAll('.btn');
 buttons.forEach((button) => {
     button.addEventListener('mouseover', (event) => event.target.style.backgroundColor = 'black');
 });
+
 // 2. keydown to implement dark mode
 const body = document.body;
 const navLinks = document.querySelectorAll('.main-navigation .nav-link')
@@ -148,4 +149,21 @@ mainImages[0].addEventListener('dblclick', () => {
 
 mainImages[1].addEventListener('dblclick', () => {
     mainImages[1].setAttribute('style', 'transform: scale(1.10);');
+});
+
+
+// only pulls items from first destination
+const destinationh1 = document.querySelector('.destination h4');
+const destinationp = document.querySelector('.destination p');
+const destinationhbtn = document.querySelector('.destination .btn');
+
+destinationh1.addEventListener('click', event => event.target.textContent = 'Top Level');
+destinationp.addEventListener('click', event => event.stopPropagation());
+destinationhbtn.addEventListener('click', event => event.target.textContent = 'Bottom Level');
+
+
+navLinks.forEach(link => function() {
+    link.addEventListener('click', (event) => {
+        event.preventDefault();
+    });
 });
