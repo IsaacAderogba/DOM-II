@@ -55,9 +55,9 @@ title.addEventListener('mouseenter', (event) => {
   });
 
 // 5. Congratulate user for successfully loading the page
-// window.addEventListener('load', () => {
-//     alert("Congratulations, you've loaded the page!");
-// });
+window.addEventListener('load', () => {
+    alert("Congratulations, you've loaded the page!");
+});
 
 // 6. change heading colour once clicked
 const headings = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
