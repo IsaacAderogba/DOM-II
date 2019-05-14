@@ -51,11 +51,18 @@ funBus.addEventListener('wheel', zoom);
 
 
 // 5. Congratulate user for successfully loading the page
-window.addEventListener('load', () => {
-    alert("Congratulations, you've loaded the page!");
-})
+// window.addEventListener('load', () => {
+//     alert("Congratulations, you've loaded the page!");
+// });
 
-// 6. focus on a heading paints a beach background
+// 6. change heading colour once clicked
+const headings = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
+headings.forEach((heading) => { 
+    heading.addEventListener('click', (event) => {
+        event.target.style.color = 'pink';    
+    });
+})
 
 // 7. As window is resized, invert sizes
 
